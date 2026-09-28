@@ -2,11 +2,11 @@ export PACKAGE_VERSION := 3.2-272
 export THEOS_PACKAGE_SCHEME
 
 ifeq ($(THEOS_DEVICE_SIMULATOR),1)
-ARCHS := arm64 x86_64
+ARCHS := arm64 arm64e x86_64
 TARGET := simulator:clang:latest:15.0
 IPHONE_SIMULATOR_ROOT := $(shell devkit/sim-root.sh)
 else
-ARCHS := arm64
+ARCHS := arm64e
 ifeq ($(THEOS_PACKAGE_SCHEME),)
 TARGET := iphone:clang:16.5:14.0
 else
